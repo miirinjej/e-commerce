@@ -46,7 +46,17 @@ export default {
     // Doc: https://bootstrap-vue.js.org/docs/
     'bootstrap-vue/nuxt',
     '@nuxtjs/pwa',
+    '@nuxtjs/style-resources',
   ],
+
+  /*
+  ** Style resources
+  */
+  styleResources: {
+    scss: [
+      '~/assets/scss/*/*.scss',
+    ],
+  },
 
   /*
   ** Build configuration
