@@ -30,6 +30,7 @@ export default {
   ** Global CSS
   */
   css: [
+    { src: 'normalize.css' },
   ],
 
   /*
