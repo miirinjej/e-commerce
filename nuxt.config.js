@@ -47,6 +47,27 @@ export default {
     'bootstrap-vue/nuxt',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
+    [ 'nuxt-fontawesome', {
+      component: 'fa',
+      imports: [
+        {
+          set: '@fortawesome/free-brands-svg-icons',
+          icons: [
+          ],
+        },
+        {
+          set: '@fortawesome/free-regular-svg-icons',
+          icons: [
+          ],
+        },
+        {
+          set: '@fortawesome/free-solid-svg-icons',
+          icons: [
+          ],
+        },
+      ],
+    }],
+    'nuxt-webfontloader',
   ],
 
   /*
@@ -56,6 +77,19 @@ export default {
     scss: [
       '~/assets/scss/*/*.scss',
     ],
+  },
+
+  /*
+  ** Web font loader
+  */
+  webfontloader: {
+    google: {
+      families: [
+        'Josefin+Sans:600',
+        'Arimo:400,700',
+        'EB+Garamond:400i',
+      ],
+    },
   },
 
   /*
