@@ -53,6 +53,8 @@ export default {
         {
           set: '@fortawesome/free-brands-svg-icons',
           icons: [
+            'faFacebookF',
+            'faTwitter',
           ],
         },
         {
@@ -63,6 +65,9 @@ export default {
         {
           set: '@fortawesome/free-solid-svg-icons',
           icons: [
+            'faSearch',
+            'faShoppingBag',
+            'faTimes',
           ],
         },
       ],
