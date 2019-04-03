@@ -1,3 +1,11 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 375px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1300px
+);
+
 $primary: $color-name--carnation;
 $secondary: $color-name--black;
 $link-color: $color-name--black;
