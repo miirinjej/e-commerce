@@ -31,6 +31,7 @@ export default {
   */
   css: [
     { src: 'normalize.css' },
+    { src: '~/assets/scss/main.scss' },
   ],
 
   /*

@@ -8,3 +8,23 @@
 $font-family--josefin-sans: ("Josefin Sans", sans-serif);
 $font-family--arimo: ("Arimo", sans-serif);
 $font-family--eb-garamond: ("EB Garamond", serif);
+
+
+/// Color names and their shades divided by underscore,
+/// used by box shadows, gradients and functional variables
+///
+/// @access public
+///
+/// @author Radmir Nabiullin
+///
+/// @type Color
+$color-name--alto: #d7d7d7;
+$color-name--black: #000000;
+$color-name--boulder: #757575;
+$color-name--carnation: #f14a58;
+$color-name--mercury: #e5e5e5;
+$color-name--picton-blue: #4bb8f0;
+$color-name--sapphire: #315295;
+$color-name--silver-chalice: #a8a8a8;
+$color-name--white: #ffffff;
+$color-name--wild-sand: #f4f4f4;

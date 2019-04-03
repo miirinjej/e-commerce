@@ -1,0 +1,12 @@
+$primary: $color-name--carnation;
+$secondary: $color-name--black;
+$link-color: $color-name--black;
+$link-hover-color: $color-name--carnation;
+$font-family-sans-serif: $font-family--arimo, -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$headings-font-family: $font-family--josefin-sans;
+$input-color: $color-name--silver-chalice;
+$input-border-color: $color-name--mercury;
+
+
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~bootstrap-vue/src/index.scss";
