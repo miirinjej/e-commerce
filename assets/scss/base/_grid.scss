@@ -1,0 +1,22 @@
+@import "../layout/mq";
+
+
+.container-fluid {
+  padding: 0 calculate-rem(20);
+  
+  @include mq($from: md) {
+    padding: 0 calculate-rem(40);
+  }
+
+  @include mq($from: lg) {
+    padding: 0 10%;
+  }
+
+  @include mq($from: xl) {
+    padding: 0 17%;
+  }
+
+  @include mq($from: xxl) {
+    padding: 0 34%;
+  }
+}

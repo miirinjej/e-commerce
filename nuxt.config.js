@@ -67,6 +67,7 @@ export default {
         {
           set: '@fortawesome/free-solid-svg-icons',
           icons: [
+            'faBars',
             'faSearch',
             'faShoppingBag',
             'faTimes',
