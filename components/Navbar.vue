@@ -101,91 +101,114 @@
                 title="Shopping bag"
               >
                 <b-container>
-                  <b-media no-body>
-                    <b-media-aside>
-                      <b-card>
-                        <b-card-text>£390.25</b-card-text>
-                      </b-card>
-                    </b-media-aside>
-                    <b-media-body>
-                      <h5>Only Skinny Jeans</h5>
-                      <p>Color: Phillipa wash</p>
-                      <p>Size: UK 17</p>
-                      <p>Quantity: 1</p>
-                      <b-link>Change details</b-link>
-                    </b-media-body>
-                  </b-media>
-                  <b-media no-body>
-                    <b-media-aside>
-                      <b-card>
-                        <b-card-text>£400.75</b-card-text>
-                        <b-card-text>New</b-card-text>
-                      </b-card>
-                    </b-media-aside>
-                    <b-media-body>
-                      <h5>
-                        Paul & Joe Sister Jumper with Neon Trims
-                      </h5>
-                      <p>Color: Blue</p>
-                      <p>Size: UK 18</p>
-                      <p>Quantity: 1</p>
-                      <b-link>Change details</b-link>
-                    </b-media-body>
-                  </b-media>
-                  <b-media no-body>
-                    <b-media-aside>
-                      <b-card>
-                        <b-card-text>£849.50</b-card-text>
-                        <b-card-text>New</b-card-text>
-                      </b-card>
-                    </b-media-aside>
-                    <b-media-body>
-                      <h5>
-                        Boyfriend T-Shirt with Bohemian Print
-                      </h5>
-                      <p>Color: Black</p>
-                      <p>Size: UK 18</p>
-                      <p>Quantity: 1</p>
-                      <b-link>Change details</b-link>
-                    </b-media-body>
-                  </b-media>
-                  <b-media no-body>
-                    <b-media-aside>
-                      <b-card>
-                        <b-card-text>£176.35</b-card-text>
-                      </b-card>
-                    </b-media-aside>
-                    <b-media-body>
-                      <h5>Turtle Neck Jumper in Rib</h5>
-                      <p>Color: Green</p>
-                      <p>Size: UK 19</p>
-                      <p>Quantity: 1</p>
-                      <b-link>Change details</b-link>
-                    </b-media-body>
-                  </b-media>
+                  <b-row>
+                    <b-col
+                      v-for="(bagItem, index) in bagItems"
+                      :key="index"
+                      class="p-0"
+                      cols="12"
+                      sm="12"
+                      md="6"
+                    >
+                      <b-media
+                        :class="{ 'is-hidden': bagItem.isHidden }"
+                        no-body
+                      >
+                        <b-media-aside>
+                          <b-card>
+                            <picture>
+                              <source
+                                :srcset="`${bagItem.imageUrl}.webp`"
+                                type="image/webp"
+                              >
+                              <source
+                                :srcset="`${bagItem.imageUrl}.jpg`"
+                                type="image/jpeg"
+                              >
+                              <img
+                                :src="`${bagItem.imageUrl}.jpg`"
+                                :alt="bagItem.name.toLowerCase()"
+                              >
+                            </picture>
+                            <div class="card__text">
+                              <span class="card__cost">{{ bagItem.cost }}</span>
+                              <span class="card__collection">{{ bagItem.collection }}</span>
+                            </div>
+                            <b-link
+                              class="card__link"
+                              @click="bagItem.isHidden = !bagItem.isHidden"
+                            >
+                              {{ bagItem.isHidden ?
+                                'Show' :
+                                'Hide'
+                              }}
+                            </b-link>
+                          </b-card>
+                        </b-media-aside>
+                        <b-media-body>
+                          <h5 class="media__heading">
+                            {{ bagItem.name }}
+                          </h5>
+                          <div class="media__text">
+                            <p>Color: {{ bagItem.color }}</p>
+                            <p>Size: {{ bagItem.size }}</p>
+                            <p>Quantity: {{ bagItem.quantity }}</p>
+                          </div>
+                          <transition name="fade">
+                            <b-link
+                              v-if="!bagItem.isHidden"
+                              class="media__link"
+                              :href="bagItem.url"
+                            >
+                              Change details
+                            </b-link>
+                          </transition>
+                        </b-media-body>
+                      </b-media>
+                    </b-col>
+                  </b-row>
                 </b-container>
-                <b-alert
-                  v-model="showAlert"
-                  dismissible
-                >
-                  You've qualified for Free UK Next Day Delivery on your order. Don't forget to enter the code nexday at
+                <b-alert v-model="showAlert">
+                  You've qualified for Free UK Next Day Delivery on your order. Don't forget to enter the code nexday
+                  at
                   checkout
                 </b-alert>
                 <div
                   slot="modal-footer"
                   class="modal__footer"
                 >
-                  <b-row>
-                    <b-nav>
-                      <b-nav-item>Save bag</b-nav-item>
-                      <b-nav-item>Empty bag</b-nav-item>
-                    </b-nav>
-                    <b-col>
-                      <b-btn variant="outline-secondary">
+                  <b-row
+                    class="w-100"
+                    align-h="between"
+                    align-v="center"
+                  >
+                    <b-col
+                      class="p-0"
+                      cols="3"
+                      sm="3"
+                    >
+                      <b-nav class="footer__special-buttons">
+                        <b-nav-item>Save bag</b-nav-item>
+                        <b-nav-item>Empty bag</b-nav-item>
+                      </b-nav>
+                    </b-col>
+                    <b-col
+                      class="p-0 d-flex justify-content-center"
+                      cols="6"
+                      sm="6"
+                    >
+                      <b-btn
+                        class="footer__buy-button"
+                        variant="outline-secondary"
+                      >
                         Buy now
                       </b-btn>
                     </b-col>
-                    <b-col>
+                    <b-col
+                      class="p-0 d-flex flex-column align-items-end"
+                      cols="3"
+                      sm="3"
+                    >
                       <div class="footer__title">
                         Total Cost
                       </div>
@@ -372,6 +395,52 @@
         showAlert: true,
         isExpanded: false,
         showSearch: false,
+        bagItems: [
+          {
+            imageUrl: '/bag/0',
+            cost: '£390.25',
+            collection: '',
+            name: 'Only Skinny Jeans',
+            color: 'Phillipa wash',
+            size: 'UK 17',
+            quantity: 1,
+            url: '',
+            isHidden: false,
+          },
+          {
+            imageUrl: '/bag/1',
+            cost: '£400.75',
+            collection: 'New',
+            name: 'Paul & Joe Sister Jumper with Neon Trims',
+            color: 'Blue',
+            size: 'UK 18',
+            quantity: 1,
+            url: '',
+            isHidden: false,
+          },
+          {
+            imageUrl: '/bag/2',
+            cost: '£849.50',
+            collection: 'New',
+            name: 'Boyfriend T-Shirt with Bohemian Print',
+            color: 'Black',
+            size: 'UK 18',
+            quantity: 1,
+            url: '',
+            isHidden: false,
+          },
+          {
+            imageUrl: '/bag/3',
+            cost: '£176.35',
+            collection: '',
+            name: 'Turtle Neck Jumper in Rib',
+            color: 'Green',
+            size: 'UK 19',
+            quantity: 1,
+            url: '',
+            isHidden: false,
+          },
+        ],
       };
     },
     computed: {
@@ -451,6 +520,107 @@
 
     .nav-link {
       padding: 0;
+    }
+  }
+
+  .modal-dialog {
+    max-width: calc(100% - 40px);
+    margin: calculate-rem(112) 20px 0 20px;
+
+    @include mq($from: md) {
+      max-width: calc(100% - 80px);
+      margin: calculate-rem(173) 40px 0 40px;
+    }
+
+    @include mq($from: lg) {
+      width: 81.4453125%;
+      max-width: calculate-rem(834);
+      margin: calculate-rem(216) auto 0 auto;
+    }
+
+    @include mq($from: xl) {
+      width: 73.84615384615%;
+      max-width: calculate-rem(960);
+      margin: calculate-rem(222) auto 0 auto;
+    }
+
+    @include mq($from: xxl) {
+      width: 30%;
+      max-width: 30%;
+      margin: calculate-rem(222) auto 0 auto;
+    }
+
+    .modal-header {
+      padding-right: calculate-rem(15);
+      padding-left: calculate-rem(15);
+
+      @include mq($from: md) {
+        padding-right: calculate-rem(30);
+        padding-left: calculate-rem(30);
+      }
+
+      .close {
+        font-size: calculate-rem(30);
+        color: $color-name--carnation;
+        opacity: 1;
+      }
+    }
+
+    .modal-body {
+      position: relative;
+
+      @include mq($from: md) {
+        padding-top: calculate-rem(30);
+      }
+
+      .container {
+        padding: 0;
+        margin-bottom: calculate-rem(24);
+
+        @include mq($from: md) {
+          padding-right: calculate-rem(15);
+          padding-left: calculate-rem(15);
+          margin-bottom: calculate-rem(34);
+        }
+      }
+    }
+
+    .media {
+      opacity: 1;
+      transition: opacity 0.2s;
+
+      .card {
+        border: none;
+      }
+
+      .card-body {
+        position: relative;
+        padding: 0;
+        text-align: center;
+      }
+
+      &.is-hidden {
+        opacity: 0.6;
+      }
+    }
+
+    .alert {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      font-family: $font-family--josefin-sans;
+      font-size: calculate-rem(10);
+      color: $color-name--black;
+      text-align: center;
+      background: $color-name--alabaster;
+      border: none;
+      border-radius: 0;
+      box-shadow: inset 0 1px 0 $color-name--mercury;
+
+      @include mq($from: md) {
+        font-size: calculate-rem(12);
+      }
     }
   }
 </style>
@@ -602,6 +772,129 @@
       @include mq($from: md) {
         display: none;
       }
+    }
+  }
+
+  .card {
+    margin-right: calculate-rem(25);
+    margin-bottom: calculate-rem(53);
+  }
+
+  .card__link {
+    position: absolute;
+    top: calculate-rem(15);
+    left: calculate-rem(16);
+    font-family: $font-family--josefin-sans;
+  }
+
+  .card__text {
+    margin-top: calculate-rem(31);
+    font-size: calculate-rem(12);
+
+    @include mq($from: md) {
+      font-size: calculate-rem(14);
+    }
+  }
+
+  .card__collection {
+    font-family: $font-family--eb-garamond;
+    font-size: calculate-rem(14);
+    color: $color-name--boulder;
+
+    @include mq($from: md) {
+      font-size: calculate-rem(16);
+    }
+  }
+
+  .media__heading {
+    margin-bottom: calculate-rem(12);
+    font-family: $font-family--arimo;
+    font-size: calculate-rem(12);
+    font-weight: 700;
+
+    @include mq($from: md) {
+      font-size: calculate-rem(14);
+    }
+  }
+
+  .media__text {
+    margin-bottom: calculate-rem(28);
+    font-size: calculate-rem(10);
+    line-height: 2;
+
+    @include mq($from: md) {
+      font-size: calculate-rem(12);
+    }
+  }
+
+  .media__link {
+    font-family: $font-family--josefin-sans;
+    font-size: calculate-rem(12);
+    color: $color-name--carnation;
+
+    @include mq($from: md) {
+      font-size: calculate-rem(14);
+    }
+  }
+
+  .modal__footer {
+    width: 100%;
+    padding-top: calculate-rem(2);
+    padding-bottom: calculate-rem(20);
+
+    @include mq($from: md) {
+      @include get-rem(padding, 12, 15, 45, 15);
+    }
+  }
+
+  .footer__special-buttons {
+    font-family: $font-family--arimo;
+    font-size: calculate-rem(10);
+    font-weight: 700;
+
+    @include mq($from: md) {
+      font-size: calculate-rem(12);
+    }
+  }
+
+  .footer__buy-button {
+    width: calculate-rem(140);
+    height: calculate-rem(62);
+    font-family: $font-family--josefin-sans;
+    font-size: calculate-rem(20);
+    border-color: $color-name--mercury;
+    border-radius: 0;
+
+    @include mq($from: md) {
+      width: calculate-rem(261);
+      height: calculate-rem(70);
+      font-size: calculate-rem(24);
+    }
+
+    @include mq($from: lg) {
+      width: calculate-rem(300);
+    }
+
+    @include mq($from: xl) {
+      width: calculate-rem(340);
+      height: calculate-rem(75);
+    }
+  }
+
+  .footer__title {
+    font-size: calculate-rem(10);
+
+    @include mq($from: md) {
+      font-size: calculate-rem(12);
+    }
+  }
+
+  .footer__cost {
+    font-family: $font-family--josefin-sans;
+    font-size: calculate-rem(14);
+
+    @include mq($from: md) {
+      font-size: calculate-rem(18);
     }
   }
 </style>
