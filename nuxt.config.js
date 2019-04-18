@@ -39,6 +39,7 @@ export default {
   */
   plugins: [
     '~plugins/vue-mq.js',
+    { src: '~plugins/vue-carousel.js', mode: 'client' },
   ],
 
   /*
