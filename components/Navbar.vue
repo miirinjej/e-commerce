@@ -359,8 +359,8 @@
         ],
         items: [
           {
-            name: 'Woman',
-            url: '/catalog/woman',
+            name: 'Women',
+            url: '/catalog/women',
           },
           {
             name: 'Men',
