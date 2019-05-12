@@ -116,7 +116,7 @@
                     <source
                       media="(min-width: 768px)"
                       srcset="/main-header/slider/slide-1/md-0.png"
-                      type="image/jpeg"
+                      type="image/png"
                     >
                     <img
                       class="slide__image"
@@ -152,7 +152,7 @@
                       <img
                         class="slide__image"
                         src="/main-header/slider/slide-1/md-1.jpg"
-                        alt="adidas blue"
+                        alt="repair patches"
                       >
                     </picture>
                     <div class="repair-patches-section__promo">
@@ -177,12 +177,12 @@
                       <source
                         media="(min-width: 768px)"
                         srcset="/main-header/slider/slide-1/md-2.png"
-                        type="image/jpeg"
+                        type="image/png"
                       >
                       <img
                         class="slide__image"
                         src="/main-header/slider/slide-1/md-2.png"
-                        alt="adidas blue"
+                        alt="sale"
                       >
                     </picture>
                     <div class="sale-section__promo">
@@ -209,12 +209,12 @@
                       <source
                         media="(min-width: 768px)"
                         srcset="/main-header/slider/slide-1/md-3.png"
-                        type="image/jpeg"
+                        type="image/png"
                       >
                       <img
                         class="slide__image"
                         src="/main-header/slider/slide-1/md-3.png"
-                        alt="adidas blue"
+                        alt="accessories"
                       >
                     </picture>
                     <div class="accessories-section__promo">
@@ -256,12 +256,12 @@
                     <source
                       media="(min-width: 768px)"
                       srcset="/main-header/slider/slide-1/md-3.png"
-                      type="image/jpeg"
+                      type="image/png"
                     >
                     <img
                       class="slide__image"
                       src="/main-header/slider/slide-1/md-3.png"
-                      alt="adidas blue"
+                      alt="accessories"
                     >
                   </picture>
                   <div class="accessories-section__promo">
@@ -299,12 +299,12 @@
                   <source
                     media="(min-width: 768px)"
                     srcset="/main-header/slider/slide-1/md-4.png"
-                    type="image/jpeg"
+                    type="image/png"
                   >
                   <img
                     class="slide__image w-100"
                     src="/main-header/slider/slide-1/md-4.png"
-                    alt="adidas blue"
+                    alt="lookbook"
                   >
                 </picture>
                 <div class="lookbook-section__promo">
@@ -328,12 +328,12 @@
               >
               <source
                 srcset="/main-header/slider/slide-2/xs.png"
-                type="image/jpeg"
+                type="image/png"
               >
               <img
                 class="discounts-section__image slide__image"
                 src="/main-header/slider/slide-1/xs.png"
-                alt="adidas blue"
+                alt="discounts"
               >
             </picture>
             <div class="discounts-section__title">

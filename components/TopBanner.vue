@@ -115,7 +115,7 @@
           <img
             class="caps-section__image banner__image"
             src="/banners/top/xl-1.png"
-            alt="nike red"
+            alt="caps"
           >
         </picture>
         <div class="caps-section__promo banner-section__promo">
