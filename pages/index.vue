@@ -239,6 +239,7 @@
     width: calculate-rem(220);
     height: calculate-rem(62);
     margin-top: calculate-rem(39);
+    font-family: $font-family--josefin-sans;
     font-size: calculate-rem(20);
     border-color: $color-name--mercury;
     border-radius: 0;
