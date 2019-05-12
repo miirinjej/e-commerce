@@ -689,6 +689,7 @@
 
   .navbar__search-bar {
     position: relative;
+    z-index: 15;
     width: calculate-rem(167);
     margin-top: calculate-rem(59);
     font-size: calculate-rem(12);
