@@ -101,11 +101,11 @@
         </b-col>
       </b-row>
       <div
-        class="main-footer__vertical-border"
+        class="ruler ruler--vertical"
         :style="{ height: `${mainFooterBorderOffsetHeight}px` }"
       ></div>
       <div
-        class="main-footer__middle-border"
+        class="ruler ruler--horizontal"
         :style="{ left: `-${mainFooterBorderOffsetLeft}px`,
                   right: `-${mainFooterBorderOffsetLeft}px` }"
       ></div>
@@ -182,10 +182,10 @@
       getMainFooterBorderOffset() {
         const mainFooter = document.querySelector('.main-footer');
         const mainFooterFooter = document.querySelector('.main-footer__footer');
-        const mainFooterMiddleBorder = document.querySelector('.main-footer__middle-border');
+        const mainFooterRulerHorizontal = document.querySelector('.ruler.ruler--horizontal');
 
         this.mainFooterBorderOffsetHeight = (mainFooter.offsetHeight - mainFooterFooter.offsetHeight)
-          + mainFooterMiddleBorder.offsetHeight;
+          + mainFooterRulerHorizontal.offsetHeight;
         this.mainFooterBorderOffsetLeft = mainFooter.offsetLeft;
       },
     },
@@ -406,27 +406,29 @@
     }
   }
 
-  .main-footer__vertical-border {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    display: none;
-    width: 1px;
-    background: $color-name--mercury;
+  .ruler {
+    &--vertical {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      display: none;
+      width: 1px;
+      background: $color-name--mercury;
 
-    @include mq($from: lg) {
-      display: block;
+      @include mq($from: lg) {
+        display: block;
+      }
     }
-  }
 
-  .main-footer__middle-border {
-    position: absolute;
-    display: none;
-    height: 1px;
-    background: $color-name--mercury;
+    &--horizontal {
+      position: absolute;
+      display: none;
+      height: 1px;
+      background: $color-name--mercury;
 
-    @include mq($from: md) {
-      display: block;
+      @include mq($from: md) {
+        display: block;
+      }
     }
   }
 
