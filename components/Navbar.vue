@@ -23,10 +23,10 @@
               name="fade"
               mode="out-in"
             >
-              <b-navbar-brand
+              <b-link
                 v-if="!isExpanded"
-                class="navbar__brand"
-                href="/"
+                class="navbar__brand d-flex align-items-center"
+                to="/"
               >
                 <img
                   class="navbar__logo d-md-none"
@@ -38,7 +38,7 @@
                   src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIEAAAAdCAYAAACNBA9oAAAD9UlEQVRoQ+2bjY0UMQyFfSVACVAClAAlQAlQApQAJUAJUAKUACVACVAC6ENjyVjOxeNshlkukVZ3t5vE9vOLfzJ7N7JGBYE3IvLILPwoIu8rG51hzc0ZlLhCHT6JyBOj92sReXuFdvxRGRK8EhGYvWdctdF7DG3MXSQQkUWCFQkWCQ5OB1NrkJUOarnh6HQwVV5UGFLwINSOpyLyuYbXf7lqqlMCxKbKWySocXSqU66ZBC+2PEn//GAz5KuI8KJ9+t7Am3X3zGe65tnWi7MXUYj3bTTifeYQuX5un9Ovt+TofKsGerFedUePjM57SeCxUVuQD172zgFb9M5BdWa9Yor+4KBYtGxO++MSkQDgAMUaEvkbg+kq/PCAqmOi/bQroVCitd0jJ0pzyGrtw95ZnVvdEjZ8cA60OuNwnAmZdfA36ZcR6ext9ql6tz9GSZAVqIpHYHkS9AI0zLegRfNfBjd4GUCzpMpEAk7uFxflerbpKa+SoOSPURJEF004mnAGywlJnFob7h+6kN0iASGTdTYMehA5NZw2u78HUte0SICeEIufkCuS19M5Ive7zX6vM7KwTdNdZFOVBCV/jJLgh3NABAZEABAdPsRGJLAhLgIThz3eyBSxn8/vO3QjEuAMZDFfRySvp3Nk9y8nHxnIQqYOj02LwJnIw9qSP0ZI0ALVAmpPof5ucx7veQM5Kc8NUJzMbw5QD3oEprct0tefcBWDPF+I6emMdPb6RLKiFMVennQen4w85pT9MUKCyjMHBdnKzbDcnypfDEUA9EjAiSSaRMMXnj6y9HSOsCEyRQeEtEDx2DokWRKU/XGXSRCdOHVEBOge4vbWW+J5AlcjwT8hQSYENw7aX2/3ThWTZ0QC7hNIB9HgZNoOxM/t6Rw5hKhj64EW4aokKPtjJBJEuZpcTk63g3m8ACAKhz1AZ5GAfaOCjm6D1s4OX6f0dM7swf4Utci6rf7IpoOyP0ZIgHK+gMLREEFv7aLKnfaRIklHD9CZJFAi2BbRt7TM8UVdRmePDfsgh04DnEgD/ukgc6qRoOyPURK0em+90rTfvlGnV3ruGekgk6qYExWQGRL4gi8rb4QEJX+MkgDD9hQkUZuUAXQWCUhP/qLJOivq7bPhmXmtCyMvw+owQoKSPy5BAgTDekJb63aP9ED+9fVCFtBZJKBYw1HRcwp0hbTVOkYdfRs2pAb2t1/vGyXBbn9c+oum+kRMma1P96KqOBseLzXvtrsE9NbUBWHRt/U0sqqPxWaWDK9byh+XJkEVoCPWZS6UjtDjdDIWCU7nkuMVWiQ4HvPTSVwkOJ1LjldokeB4zE8n8S6RgErZ/6eVfTx8OuccpdBvmX2QS/RqdpsAAAAASUVORK5CYII="
                   alt="logo"
                 >
-              </b-navbar-brand>
+              </b-link>
               <b-dropdown
                 v-if="isExpanded"
                 class="navbar__language navbar__language--mobile"
@@ -264,7 +264,7 @@
               <b-nav-item
                 v-for="(item, index) in items"
                 :key="index"
-                :href="item.url"
+                :to="item.url"
               >
                 {{ item.name }}
               </b-nav-item>
@@ -318,7 +318,7 @@
           <b-nav-item
             v-for="(item, index) in items"
             :key="index"
-            :href="item.url"
+            :to="item.url"
             @click="isExpanded = false"
           >
             {{ item.name }}
