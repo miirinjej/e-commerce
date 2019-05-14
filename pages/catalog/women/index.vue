@@ -174,7 +174,10 @@
             :order-md="item.isOffer ? '2' : index"
             :order-lg="index"
           >
-            <picture class="catalog-section__picture">
+            <picture
+              v-if="!item.isOffer"
+              class="catalog-section__picture"
+            >
               <source
                 media="(max-width: 767px)"
                 :srcset="`${item.imageUrl}xs.webp`"
