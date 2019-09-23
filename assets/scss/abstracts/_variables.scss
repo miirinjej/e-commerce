@@ -4,6 +4,9 @@
 ///
 /// @author Radmir Nabiullin
 ///
+/// @example
+///   $font-family--open-sans: ("Open Sans", sans-serif);
+///
 /// @type List
 $font-family--josefin-sans: ("Josefin Sans", sans-serif);
 $font-family--arimo: ("Arimo", sans-serif);
@@ -16,6 +19,11 @@ $font-family--eb-garamond: ("EB Garamond", serif);
 /// @access public
 ///
 /// @author Radmir Nabiullin
+///
+/// @example
+///   $color-name--mine-black: #000000;
+///   $color-name--mine-shaft_base: #2c2c2c;
+///   $color-name--mine-shaft_dark: #212121;
 ///
 /// @type Color
 $color-name--alabaster: #f7f7f7;

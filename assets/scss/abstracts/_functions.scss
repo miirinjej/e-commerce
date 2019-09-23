@@ -4,33 +4,16 @@
 ///
 /// @author Radmir Nabiullin
 ///
-/// @example scss - Using
-/// .foo {
-///   @include get-rem(margin, 10);
-///   font-size: calculate-rem(30);
-/// }
+/// @example scss — using
+///   .foo {
+///     font-size: calculate-rem(30);
+///   }
 ///
-/// @example css - Output CSS
-/// .foo {
-///   margin: 0.625rem;
-///   font-size: 1.875rem;
-/// }
+/// @example css — Output CSS
+///   .foo {
+///     font-size: 1.875rem;
+///   }
 @function calculate-rem($size) {
   $remSize: $size / 16;
   @return $remSize * 1rem;
-}
-
-@mixin get-rem($property, $values...) {
-  $max: length($values);
-  $remValues: "";
-
-  @for $i from 1 through $max {
-    $value: calculate-rem(nth($values, $i));
-    $remValues: #{$remValues + $value};
-
-    @if $i < $max {
-      $remValues: #{$remValues + " "};
-    }
-  }
-  #{$property}: $remValues;
 }
